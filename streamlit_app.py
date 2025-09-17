@@ -5,8 +5,8 @@ import pandas as pd
 # ========== LOAD DATA ==========
 @st.cache_data
 def load_data():
-    customers = pd.read_csv("customer_features_with_clusters.csv", dtype=str)
-    top_products = pd.read_csv("top_products_per_cluster.csv", dtype=str)
+    customers = pd.read_csv("customer_features_with_clusters.csv")
+    top_products = pd.read_csv("top_products_per_cluster.csv")
     return customers, top_products
 
 customers, top_products = load_data()
@@ -64,13 +64,20 @@ if customer_id:
 
         # ---- Recommendations ----
         st.subheader("🎯 Product Recommendations")
-        recs = top_products[top_products["Cluster"].astype(str) == str(cust["Cluster"])]
+
+
+        # Force both to string
+        cust_cluster = str(int(float(cust["Cluster"])))
+        top_products["Cluster"] = top_products["Cluster"].astype(str)
+
+        recs = top_products[top_products["Cluster"] == cust_cluster]
 
         if recs.empty:
             st.info("No recommendations found for this cluster.")
+            
         else:
             st.dataframe(
-                recs[["StockCode", "Description", "Quantity", "Rank"]].head(10),
+                recs[["StockCode", "Description", "Quantity", "Rank"]].head(5),
                 use_container_width=True
             )
 
