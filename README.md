@@ -91,14 +91,6 @@ The dataset contains transactional and customer-level data, including:
 
 ---
 
-## Access the Project
-
-* [Dataset](dataset/customer_transactions.csv)
-* [Jupyter Notebook](notebooks/customer_clustering_recommendation.ipynb)
-* [Cluster Visualization](images/customer_clusters.png)
-
----
-
 ## Business Value
 
 This project demonstrates how unsupervised learning can be used to uncover hidden customer segments and translate them into actionable product recommendations. The approach supports data-driven marketing, improves customer experience, and increases revenue potential.
