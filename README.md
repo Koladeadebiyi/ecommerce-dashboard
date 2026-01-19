@@ -29,7 +29,7 @@ The dataset contains transactional and customer-level data, including:
 * **Product:** Product category, product ID, price
 * **Derived Features:** Total spend, average order value, recency, frequency
 
-<img width="900" alt="customer-clustering" src="images/customer_clusters.png" />
+[<img width="900" alt="customer-clustering" src="images/customer_clusters.png" />](https://customer-recommendation-dashboard-kxchadoqnwhbgxz8v7fhbp.streamlit.app/)
 
 ---
 
